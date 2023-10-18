@@ -17,12 +17,20 @@ body {
   height: 100vh;
 }
 
+.logo {
+  position: absolute;
+  top: 70px;
+  left: 70px;
+  height: 100px;
+}
+
 .form-group {
   display: flex;
   width: 25vw;
   padding: 10px;
   border: none;
   border-radius: 25px;
+  transition: ease-in-out 0.2s;
 }
 
 input {
@@ -44,10 +52,30 @@ input:nth-child(4) {
   text-align: center;
   font-weight: bold;
   font-size: 1.5rem;
-  transition: ease-in-out 0.2s;
 }
 
 .btn:active {
   transition: 0.2s;
   transform: scale(0.9);
+}
+
+.custom-shape-divider-top-1697668358 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+}
+
+.custom-shape-divider-top-1697668358 svg {
+  position: relative;
+  display: block;
+  width: calc(100% + 1.3px);
+  height: 300px;
+  transform: rotateY(180deg);
+}
+
+.custom-shape-divider-top-1697668358 .shape-fill {
+  fill: #FFFFFF;
 }
