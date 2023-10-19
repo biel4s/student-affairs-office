@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro&display=swap');
+@import "variables";
 
 * {
   padding: 0;
@@ -7,7 +8,7 @@
 }
 
 body {
-  background-color: #0069FF;
+  background-color: $primary-color;
 }
 
 .container {
@@ -19,19 +20,28 @@ body {
 
 .logo {
   position: absolute;
-  top: 70px;
-  left: 70px;
-  height: 100px;
+  top: 50px;
+  left: 50px;
+  height: 80px;
+  transition: ease-in-out 0.2s;
+}
+
+form {
+  position: relative;
+  height: 100vh;
+  top: 50%;
+  transition: ease-in-out 0.2s;
 }
 
 .form-group {
   display: flex;
-  width: 25vw;
+  width: 500px;
   padding: 10px;
   border: none;
   border-radius: 25px;
   transition: ease-in-out 0.2s;
 }
+
 
 input {
   box-sizing: border-box;
@@ -46,12 +56,12 @@ input:nth-child(4) {
 .btn {
   display: inline-block;
   cursor: pointer;
-  background-color: #242752;
+  background-color: $secondary-color;
   color: white;
   margin-top: 30px;
   text-align: center;
   font-weight: bold;
-  font-size: 1.5rem;
+  font-size: 1.4rem;
 }
 
 .btn:active {
@@ -59,7 +69,7 @@ input:nth-child(4) {
   transform: scale(0.9);
 }
 
-.custom-shape-divider-top-1697668358 {
+.custom-shape-divider-top-1697724837 {
   position: absolute;
   top: 0;
   left: 0;
@@ -68,14 +78,58 @@ input:nth-child(4) {
   line-height: 0;
 }
 
-.custom-shape-divider-top-1697668358 svg {
+.custom-shape-divider-top-1697724837 svg {
   position: relative;
   display: block;
-  width: calc(100% + 1.3px);
-  height: 300px;
+  width: calc(120% + 1.3px);
+  height: 250px;
   transform: rotateY(180deg);
 }
 
-.custom-shape-divider-top-1697668358 .shape-fill {
+.custom-shape-divider-top-1697724837 .shape-fill {
   fill: #FFFFFF;
+}
+
+//Media queries
+//Tablet
+@media (max-width: 768px) {
+  .logo {
+    height: 70px;
+  }
+
+  .form-group {
+    width: 400px;
+  }
+
+  .btn {
+    font-size: 1.4rem;
+  }
+
+  .custom-shape-divider-top-1697724837 svg {
+    width: calc(150% + 1.3px);
+  }
+}
+
+//Mobile
+@media (max-width: 480px) {
+  .logo {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 70px;
+  }
+
+  .form-group {
+    width: 300px;
+    max-width: 80vw;
+  }
+
+  .btn {
+    font-size: 1.3rem;
+  }
+
+  .custom-shape-divider-top-1697724837 svg {
+    width: calc(200% + 1.3px);
+    height: 250px;
+  }
 }
