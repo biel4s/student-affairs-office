@@ -16,6 +16,10 @@
   </div>
 </template>
 
+<style scoped lang="scss">
+@import "~/assets/scss/login";
+</style>
+
 <script>
 export default {
   data() {
@@ -25,8 +29,15 @@ export default {
     };
   },
   methods: {
+    validate() {
+      return this.login !== '' && this.password !== '';
+    },
     auth() {
-      console.log(this.login, this.password)
+      if (this.validate()) {
+        this.$router.push('/home');
+      } else {
+
+      }
     }
   }
 }
