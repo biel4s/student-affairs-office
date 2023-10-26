@@ -196,8 +196,8 @@ export default {
   }
 }
 
-/* Medium devices (tablets, 768px and up) */
-@media (max-width: 768px) {
+/* Small devices (landscape phones, less than 768px) */
+@media (max-width: 767.98px) {
   .report-right {
     justify-content: end;
   }
@@ -254,7 +254,7 @@ export default {
 }
 
 /* Extra small devices (portrait phones, less than 380px) */
-@media only screen and (max-width: 380px) {
+@media only screen and (max-width: 379.98px) {
   .report-left {
     display: flex;
     justify-content: space-between;

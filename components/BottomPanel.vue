@@ -34,8 +34,8 @@
   }
 }
 
-/* Large devices (desktops, less than 1280px) */
-@media only screen and (max-width: 1280px) {
+/* Large devices (landscape tablets, desktops, less than 1281px) */
+@media only screen and (max-width: 1280.98px) {
   .panel {
     position: fixed;
     bottom: 0;

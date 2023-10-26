@@ -4,6 +4,7 @@
       <div class="report-left">
         <img class="report-pfp" src="~/assets/images/pfp.png" alt="Profile picture">
         <div class="info">
+          <p class="date2">{{ date }}</p>
           <p class="report-name">{{ reportName }}</p>
           <p class="title">{{ title }}</p>
         </div>
@@ -50,6 +51,7 @@ export default {
 .date {
   display: flex;
   font-size: 22px;
+  text-align: center;
 }
 
 .description {
@@ -60,5 +62,74 @@ export default {
   font-size: 24px;
   overflow: auto;
   cursor: default;
+}
+
+//Media queries
+
+/* Medium devices (tablets, less than 992px) */
+@media only screen and (max-width: 991.98px) {
+  .report-pfp {
+    width: 65px;
+  }
+
+  .info {
+    width: 250px;
+  }
+
+  .report-name {
+    font-size: 24px;
+  }
+
+  .title {
+    font-size: 18px;
+  }
+
+  .date {
+    font-size: 18px;
+  }
+
+  .description {
+    margin-top: 25px;
+    font-size: 20px
+  }
+}
+
+/* X-Small devices (portrait phones, less than 576px) */
+@media only screen and (max-width: 575.98px) {
+  .report-pfp {
+    width: 45px;
+  }
+
+  .info {
+    width: 250px;
+  }
+
+  .report-name {
+    font-size: 18px;
+  }
+
+  .title {
+    font-size: 14px;
+  }
+
+  .date {
+    display: none;
+  }
+
+  .date2 {
+    font-size: 12px;
+    opacity: 0.6;
+  }
+
+  .description {
+    margin-top: 20px;
+    font-size: 16px
+  }
+}
+
+@media only screen and (min-width: 576px) {
+  .date2 {
+    display: none;
+  }
 }
 </style>
