@@ -12,6 +12,7 @@
       <ReportItem/>
     </ul>
   </div>
+  <BottomPanel/>
 </template>
 
 <script>
