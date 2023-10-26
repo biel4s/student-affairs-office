@@ -13,7 +13,9 @@
       <p class="status">{{ status }}</p>
       <p class="time">{{ time }}</p>
       <div class="icons">
-        <Icon name="ic:baseline-edit"/>
+        <NuxtLink to="/report">
+          <Icon name="ic:baseline-edit"/>
+        </NuxtLink>
         <Icon name="ic:baseline-delete"/>
       </div>
     </div>
@@ -56,7 +58,7 @@ export default {
 }
 </script>
 
-<style scoped lang="scss">
+<style lang="scss">
 
 .report {
   display: flex;
@@ -133,6 +135,10 @@ export default {
 
 .icons {
   display: flex;
+
+  a {
+    color: black;
+  }
 
   .icon:first-child {
     cursor: pointer;

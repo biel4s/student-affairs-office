@@ -37,16 +37,15 @@
 /* Large devices (desktops, less than 1280px) */
 @media only screen and (max-width: 1280px) {
   .panel {
-    height: 60px;
-    width: 100%;
-    background-color: $primary-color;
-
+    position: fixed;
+    bottom: 0;
     display: flex;
     align-items: center;
     text-align: center;
     justify-content: space-evenly;
-    position: fixed;
-    bottom: 0;
+    height: 60px;
+    width: 100%;
+    background-color: $primary-color;
   }
 
   a {

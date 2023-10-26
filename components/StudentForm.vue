@@ -120,5 +120,4 @@ label {
     min-width: 250px;
   }
 }
-
 </style>
