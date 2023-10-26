@@ -11,97 +11,11 @@ body {
   background-color: white;
 }
 
-.navbar {
-  height: 70px;
-  width: 100%;
-  background-color: $secondary-color;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.nav-left {
-  color: white;
-  margin-left: 3rem;
-}
-
-.nav-name {
-  font-size: 24px;
-  font-weight: bold;
-}
-
-.nav-pfp {
-  border-radius: 100%;
-  width: 55px;
-  margin-right: 3rem;
+.content {
+  padding: 0 3rem;
 }
 
 .primary-heading {
   font-size: 36px;
   padding: 30px 3rem;
-}
-
-.content {
-  padding: 0 3rem;
-}
-
-.report {
-  display: flex;
-  align-items: center;
-  background-color: #F1F1F1;
-  border-radius: 20px;
-  padding: 0 20px;
-  height: 100px;
-  cursor: pointer;
-}
-
-.report-left {
-  display: flex;
-  align-items: center;
-}
-
-.report-pfp {
-  width: 70px;
-  border-radius: 100%;
-}
-
-.info {
-  margin-left: 40px;
-  width: 250px;
-}
-
-.report-name {
-  font-weight: bold;
-  font-size: 24px;
-}
-
-.title {
-  font-size: 20px;
-}
-
-.report-right {
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-  width: 100%;
-}
-
-.description {
-  max-width: 700px;
-  font-size: 20px;
-  opacity: 0.5;
-}
-
-.status {
-  font-size: 20px;
-  opacity: 0.5;
-}
-
-.time {
-  font-size: 20px;
-  opacity: 0.5;
-}
-
-.icons {
-  display: flex;
 }

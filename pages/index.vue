@@ -35,8 +35,6 @@ export default {
     auth() {
       if (this.validate()) {
         this.$router.push('/home');
-      } else {
-
       }
     }
   }
