@@ -1,21 +1,11 @@
-@import url('https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro&display=swap');
 @import "variables";
-
-* {
-  padding: 0;
-  margin: 0;
-  font-family: 'Be Vietnam Pro', sans-serif;
-}
-
-body {
-  background-color: $primary-color;
-}
 
 .container {
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
+  background-color: $primary-color;
 }
 
 .logo {
@@ -27,8 +17,7 @@ body {
 }
 
 form {
-  position: relative;
-  height: 100vh;
+  position: absolute;
   top: 50%;
   transition: ease-in-out 0.2s;
 }
@@ -42,7 +31,6 @@ form {
   transition: ease-in-out 0.2s;
 }
 
-
 input {
   box-sizing: border-box;
   padding-left: 20px !important;
@@ -54,19 +42,7 @@ input:nth-child(4) {
 }
 
 .btn {
-  display: inline-block;
-  cursor: pointer;
   background-color: $secondary-color;
-  color: white;
-  margin-top: 30px;
-  text-align: center;
-  font-weight: bold;
-  font-size: 1.4rem;
-}
-
-.btn:active {
-  transition: 0.2s;
-  transform: scale(0.9);
 }
 
 .custom-shape-divider-top-1697724837 {
@@ -91,8 +67,8 @@ input:nth-child(4) {
 }
 
 //Media queries
-//Tablet
-@media (max-width: 768px) {
+/* Medium devices (tablets, less than 992px) */
+@media only screen and (max-width: 991.98px) {
   .logo {
     height: 70px;
   }
@@ -110,13 +86,12 @@ input:nth-child(4) {
   }
 }
 
-//Mobile
-@media (max-width: 480px) {
+/* X-Small devices (portrait phones, less than 576px) */
+@media only screen and (max-width: 575.98px) {
   .logo {
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
-    height: 70px;
   }
 
   .form-group {
