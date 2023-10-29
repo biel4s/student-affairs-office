@@ -8,10 +8,10 @@
 </template>
 
 <script>
-//@import studentForm from "components/StudentForm.vue"
+import studentForm from "~/components/StudentForm";
 
 export default {
-  //components: {studentForm},
+  components: {studentForm},
   data() {
     return {
       students: []
@@ -20,7 +20,10 @@ export default {
   methods: {
     addStudent(student) {
       this.students.push(student);
+      console.log("Student", student)
+      console.log("array", this.students)
     }
   }
+
 }
 </script>

@@ -6,10 +6,6 @@
       <ReportItem/>
       <ReportItem/>
       <ReportItem/>
-      <ReportItem/>
-      <ReportItem/>
-      <ReportItem/>
-      <ReportItem/>
     </ul>
   </div>
   <BottomPanel/>

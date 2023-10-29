@@ -1,23 +1,21 @@
 <template>
   <div class="container">
     <form @submit.prevent="addStudent">
-      <label for="name">Name</label>
-      <input v-model="newStudent.name" type="text" class="form-group" id="name" placeholder="Kamil" required>
-      <label for="surname">Surname</label>
-      <input v-model="newStudent.surname" type="text" class="form-group" id="surname" placeholder="Kamilowicz" required>
+      <label for="name">Full name</label>
+      <input v-model="form.name" type="text" class="form-group" id="name" placeholder="Kamil Kamilowicz" required>
       <label for="birth">Date of birth</label>
-      <input v-model="newStudent.birth" type="text" class="form-group" id="birth" placeholder="01.01.2000" required>
+      <input v-model="form.birth" type="text" class="form-group" id="birth" placeholder="01.01.2000" required>
       <label for="email">Email</label>
-      <input v-model="newStudent.email" type="email" class="form-group" id="email"
+      <input v-model="form.email" type="email" class="form-group" id="email"
              placeholder="kamil.kamilowicz@mail.com"
              required>
       <label for="album">Album number</label>
-      <input v-model="newStudent.album" type="number" class="form-group" id="album" placeholder="123456" required>
+      <input v-model="form.album" type="number" class="form-group" id="album" placeholder="123456" required>
       <label for="field">Field of study</label>
-      <input v-model="newStudent.field" type="text" class="form-group" id="field" placeholder="Computer Science"
+      <input v-model="form.field" type="text" class="form-group" id="field" placeholder="Computer Science"
              required>
       <label for="speciality">Speciality</label>
-      <input v-model="newStudent.speciality" type="text" class="form-group" id="speciality"
+      <input v-model="form.speciality" type="text" class="form-group" id="speciality"
              placeholder="Front-end developer"
              required>
       <div class="buttons">
@@ -31,9 +29,8 @@
 export default {
   data() {
     return {
-      newStudent: {
+      form: {
         name: '',
-        surname: '',
         birth: '',
         email: '',
         album: '',
@@ -44,15 +41,23 @@ export default {
   },
   methods: {
     addStudent() {
-      this.$emit('add-student', {...this.newStudent})
-      this.newStudent.name = ''
-      this.newStudent.surname = ''
-      this.newStudent.birth = ''
-      this.newStudent.email = ''
-      this.newStudent.album = ''
-      this.newStudent.field = ''
-      this.newStudent.speciality = ''
-      //this.$router.push('/home');
+      console.log("New student", this.form);
+      this.$emit('add-student', this.form);
+      this.form = {
+        name: '',
+        birth: '',
+        email: '',
+        album: '',
+        field: '',
+        speciality: ''
+      };
+      /* this.form.name = ''
+       this.form.birth = ''
+       this.form.email = ''
+       this.form.album = ''
+       this.form.field = ''
+       this.form.speciality = ''*/
+      this.$router.push('/students');
     }
   }
 }
