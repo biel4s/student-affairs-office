@@ -10,6 +10,8 @@
     "postinstall": "nuxt prepare"
   },
   "devDependencies": {
+    "@babel/plugin-proposal-class-properties": "^7.18.6",
+    "@babel/plugin-proposal-decorators": "^7.23.2",
     "@nuxt/devtools": "latest",
     "nuxt": "^3.7.4",
     "nuxt-icon": "^0.6.0",

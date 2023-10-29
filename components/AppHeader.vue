@@ -1,8 +1,8 @@
 <template>
   <nav class="navbar">
     <div class="nav-info">
-      <p class="nav-name">{{ this.fullName }}</p>
-      <p class="id">ID: {{ this.id }}</p>
+      <p class="nav-name">{{ fullName }}</p>
+      <p class="id">ID: {{ id }}</p>
     </div>
     <img class="nav-pfp" src="~/assets/images/pfp.png" alt="Profile picture">
   </nav>

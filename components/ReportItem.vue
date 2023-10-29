@@ -1,8 +1,8 @@
 <template>
-  <li class="report">
+  <li class="report-card">
     <div class="report-left">
       <img class="report-pfp" src="~/assets/images/pfp.png" alt="Profile picture">
-      <div class="info">
+      <div class="report-info">
         <p class="date">12:38 am - October 17</p>
         <p class="report-name">{{ reportName }}</p>
         <p class="title">{{ title }}</p>
@@ -59,8 +59,7 @@ export default {
 </script>
 
 <style lang="scss">
-
-.report {
+.report-card {
   display: flex;
   align-items: center;
   background-color: #F1F1F1;
@@ -81,7 +80,7 @@ export default {
   border-radius: 100%;
 }
 
-.info {
+.report-info {
   margin-left: 40px;
   width: 250px;
 }
@@ -155,7 +154,7 @@ export default {
 
 /* Medium devices (tablets, less than 992px) */
 @media only screen and (max-width: 991.98px) {
-  .report {
+  .report-card {
     height: 90px;
     margin-bottom: 15px;
   }
@@ -168,7 +167,7 @@ export default {
     width: 65px;
   }
 
-  .info {
+  .report-info {
     margin-left: 20px;
     width: 200px;
   }
@@ -209,7 +208,7 @@ export default {
 
 /* X-Small devices (portrait phones, less than 576px) */
 @media only screen and (max-width: 575.98px) {
-  .report {
+  .report-card {
     height: 70px;
     margin-bottom: 10px;
   }
@@ -218,7 +217,7 @@ export default {
     width: 50px;
   }
 
-  .info {
+  .report-info {
     width: 150px;
   }
 

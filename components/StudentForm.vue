@@ -2,38 +2,57 @@
   <div class="container">
     <form @submit.prevent="addStudent">
       <label for="name">Name</label>
-      <input v-model="name" type="text" class="form-group" id="name" placeholder="Kamil" required>
+      <input v-model="newStudent.name" type="text" class="form-group" id="name" placeholder="Kamil" required>
       <label for="surname">Surname</label>
-      <input v-model="surname" type="text" class="form-group" id="surname" placeholder="Kamilowicz" required>
+      <input v-model="newStudent.surname" type="text" class="form-group" id="surname" placeholder="Kamilowicz" required>
       <label for="birth">Date of birth</label>
-      <input v-model="birth" type="text" class="form-group" id="birth" placeholder="01.01.2000" required>
+      <input v-model="newStudent.birth" type="text" class="form-group" id="birth" placeholder="01.01.2000" required>
       <label for="email">Email</label>
-      <input v-model="email" type="email" class="form-group" id="email" placeholder="kamil.kamilowicz@mail.com"
+      <input v-model="newStudent.email" type="email" class="form-group" id="email"
+             placeholder="kamil.kamilowicz@mail.com"
              required>
       <label for="album">Album number</label>
-      <input v-model="album" type="number" class="form-group" id="album" placeholder="123456" required>
+      <input v-model="newStudent.album" type="number" class="form-group" id="album" placeholder="123456" required>
       <label for="field">Field of study</label>
-      <input v-model="field" type="text" class="form-group" id="field" placeholder="Computer Science" required>
+      <input v-model="newStudent.field" type="text" class="form-group" id="field" placeholder="Computer Science"
+             required>
       <label for="speciality">Speciality</label>
-      <input v-model="speciality" type="text" class="form-group" id="speciality" placeholder="Front-end developer"
+      <input v-model="newStudent.speciality" type="text" class="form-group" id="speciality"
+             placeholder="Front-end developer"
              required>
       <div class="buttons">
         <button type="reset" class="btn btn-reset">Clear</button>
-        <button type="submit" class="btn btn-submit">Log in</button>
+        <button type="submit" class="btn btn-submit">Add</button>
       </div>
     </form>
   </div>
 </template>
 <script>
 export default {
-  methods: {
-    validate() {
-      return this.name !== '' && this.surname !== '';
-    },
-    addStudent() {
-      if (this.validate()) {
-        this.$router.push('/home');
+  data() {
+    return {
+      newStudent: {
+        name: '',
+        surname: '',
+        birth: '',
+        email: '',
+        album: '',
+        field: '',
+        speciality: ''
       }
+    }
+  },
+  methods: {
+    addStudent() {
+      this.$emit('add-student', {...this.newStudent})
+      this.newStudent.name = ''
+      this.newStudent.surname = ''
+      this.newStudent.birth = ''
+      this.newStudent.email = ''
+      this.newStudent.album = ''
+      this.newStudent.field = ''
+      this.newStudent.speciality = ''
+      //this.$router.push('/home');
     }
   }
 }
