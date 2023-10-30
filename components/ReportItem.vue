@@ -4,19 +4,19 @@
       <img class="report-pfp" src="~/assets/images/pfp.png" alt="Profile picture">
       <div class="report-info">
         <p class="date">12:38 am - October 17</p>
-        <p class="report-name">{{ reportName }}</p>
-        <p class="title">{{ title }}</p>
+        <p class="report-name">{{ report.reportName }}</p>
+        <p class="title">{{ report.title }}</p>
       </div>
     </div>
     <div class="report-right">
-      <p class="description">{{ description }}</p>
-      <p class="status">{{ status }}</p>
-      <p class="time">{{ time }}</p>
+      <p class="description">{{ report.description }}</p>
+      <p class="status">{{ report.status }}</p>
+      <p class="time">{{ report.time }}</p>
       <div class="icons">
-        <NuxtLink to="/report">
+        <NuxtLink :to="`/report/${reportIndex}`">
           <Icon name="ic:baseline-edit"/>
         </NuxtLink>
-        <Icon name="ic:baseline-delete"/>
+        <Icon name="ic:baseline-delete" @click="$emit('remove-report', reportIndex)"/>
       </div>
     </div>
   </li>
@@ -24,14 +24,12 @@
 
 <script>
 export default {
-  data() {
-    return {
-      reportName: "Justyna Justynowicz",
-      title: "Problem z monitorem",
-      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
-      status: "Open",
-      time: "12:38 am"
-    }
+  props: {
+    report: {
+      type: Object,
+      required: true
+    },
+    reportIndex: Number
   }
   /* name: "ReportItem",
   props: {

@@ -1,9 +1,18 @@
 <template>
   <div class="container">
     <div class="buttons">
-      <button class="btn">Status
-        <Icon name="material-symbols:keyboard-arrow-down-rounded"/>
+      <button class="btn" @click="isOpen = !isOpen">Status
+        <Icon name="material-symbols:keyboard-arrow-down-rounded" :class="{ 'rotate': isOpen }"/>
       </button>
+      <div class="dropdown">
+        <div v-if="isOpen" class="dropdown-content">
+          <ul>
+            <li @click="closeDropdown">Open</li>
+            <li @click="closeDropdown">In progress</li>
+            <li @click="closeDropdown">Close</li>
+          </ul>
+        </div>
+      </div>
       <button class="btn">Print</button>
       <button class="btn">Archive</button>
       <button class="btn btn-save">Save</button>
@@ -13,6 +22,18 @@
 </template>
 
 <script>
+export default {
+  data() {
+    return {
+      isOpen: false
+    }
+  },
+  methods: {
+    closeDropdown() {
+      this.isOpen = false;
+    }
+  }
+}
 
 </script>
 
@@ -30,6 +51,45 @@
   justify-content: center;
   flex-direction: column;
   width: 600px;
+}
+
+.rotate {
+  transform: rotate(180deg);
+}
+
+.dropdown {
+  position: relative;
+}
+
+.dropdown-content {
+  position: absolute;
+  width: 100%;
+  background-color: #F1F1F1;
+  border-radius: 25px;
+  font-size: 20px;
+  margin-top: -10px;
+  text-align: center;
+  z-index: 1;
+  cursor: pointer;
+
+  ul {
+    list-style-type: none;
+  }
+
+  li {
+    padding: 15px 0;
+    text-decoration: none;
+    font-weight: bold;
+  }
+
+  li:hover {
+    background-color: #E2E2E2;
+    border-radius: 25px;
+  }
+}
+
+.show {
+  display: block;
 }
 
 .btn {
