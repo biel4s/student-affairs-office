@@ -2,20 +2,20 @@
   <div class="container">
     <form @submit.prevent="addStudent">
       <label for="name">Full name</label>
-      <input v-model="form.name" type="text" class="form-group" id="name" placeholder="Kamil Kamilowicz" required>
+      <input v-model="student.name" type="text" class="form-group" id="name" placeholder="Kamil Kamilowicz" required>
       <label for="birth">Date of birth</label>
-      <input v-model="form.birth" type="text" class="form-group" id="birth" placeholder="01.01.2000" required>
+      <input v-model="student.birth" type="text" class="form-group" id="birth" placeholder="01.01.2000" required>
       <label for="email">Email</label>
-      <input v-model="form.email" type="email" class="form-group" id="email"
+      <input v-model="student.email" type="email" class="form-group" id="email"
              placeholder="kamil.kamilowicz@mail.com"
              required>
       <label for="album">Album number</label>
-      <input v-model="form.album" type="number" class="form-group" id="album" placeholder="123456" required>
+      <input v-model="student.album" type="number" class="form-group" id="album" placeholder="123456" required>
       <label for="field">Field of study</label>
-      <input v-model="form.field" type="text" class="form-group" id="field" placeholder="Computer Science"
+      <input v-model="student.field" type="text" class="form-group" id="field" placeholder="Computer Science"
              required>
       <label for="speciality">Speciality</label>
-      <input v-model="form.speciality" type="text" class="form-group" id="speciality"
+      <input v-model="student.speciality" type="text" class="form-group" id="speciality"
              placeholder="Front-end developer"
              required>
       <div class="buttons">
@@ -29,7 +29,7 @@
 export default {
   data() {
     return {
-      form: {
+      student: {
         name: '',
         birth: '',
         email: '',
@@ -41,22 +41,13 @@ export default {
   },
   methods: {
     addStudent() {
-      console.log("New student", this.form);
-      this.$emit('add-student', this.form);
-      this.form = {
-        name: '',
-        birth: '',
-        email: '',
-        album: '',
-        field: '',
-        speciality: ''
-      };
-      /* this.form.name = ''
-       this.form.birth = ''
-       this.form.email = ''
-       this.form.album = ''
-       this.form.field = ''
-       this.form.speciality = ''*/
+      this.$emit('add-student', {...this.student});
+      this.student.name = '';
+      this.student.birth = '';
+      this.student.email = '';
+      this.student.album = '';
+      this.student.field = '';
+      this.student.speciality = '';
       this.$router.push('/students');
     }
   }

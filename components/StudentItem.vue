@@ -3,16 +3,16 @@
     <div class="student-left">
       <Icon name="ph:student-bold"/>
       <div class="student-info">
-        <p class="student-name"><span>Student's name:</span> {{ form.name }}</p>
-        <p class="birth"><span>Date of birth:</span> {{ form.birth }}</p>
-        <p class="album"><span>Album number:</span> {{ form.album }}</p>
-        <p class="field"><span>Field of study:</span> {{ form.field }}</p>
-        <p class="email"><span>Email:</span> {{ form.email }}</p>
-        <p class="speciality"><span>Specialization:</span> {{ form.speciality }}</p>
+        <p class="student-name"><span>Student's name:</span> {{ student.name }}</p>
+        <p class="birth"><span>Date of birth:</span> {{ student.birth }}</p>
+        <p class="album"><span>Album number:</span> {{ student.album }}</p>
+        <p class="field"><span>Field of study:</span> {{ student.field }}</p>
+        <p class="email"><span>Email:</span> {{ student.email }}</p>
+        <p class="speciality"><span>Specialization:</span> {{ student.speciality }}</p>
       </div>
     </div>
     <div class="student-right">
-      <Icon name="ic:baseline-delete" @click="$emit('remove-student', form)"/>
+      <Icon name="ic:baseline-delete" @click="$emit('remove-student', student)"/>
     </div>
   </li>
 </template>
@@ -20,21 +20,11 @@
 <script>
 export default {
   props: {
-    form: {
+    student: {
       type: Object,
       required: true
     }
   }
-  /*data() {
-    return {
-      studentName: "Bartek Bartowicz",
-      album: "123456",
-      email: "bartekbartowicz@mail.com",
-      birth: "01.01.2000",
-      field: "Computer Science",
-      speciality: "Front-end developer"
-    }
-  }*/
 }
 </script>
 

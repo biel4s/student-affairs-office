@@ -14,14 +14,13 @@ export default {
   components: {studentForm},
   data() {
     return {
-      students: []
+      students: JSON.parse(sessionStorage.getItem('students')) || []
     }
   },
   methods: {
     addStudent(student) {
       this.students.push(student);
-      console.log("Student", student)
-      console.log("array", this.students)
+      sessionStorage.setItem('students', JSON.stringify(this.students));
     }
   }
 
