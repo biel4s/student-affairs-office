@@ -1,5 +1,4 @@
 <template>
-  <AppHeader/>
   <h1 class="primary-heading">Reports</h1>
   <div class="content">
     <ul>
@@ -7,11 +6,14 @@
                   @remove-report="removeReport"/>
     </ul>
   </div>
-  <BottomPanel/>
 </template>
 
 <script>
 import ReportItem from "~/components/ReportItem";
+
+definePageMeta({
+  layout: 'main'
+})
 
 export default {
   components: {ReportItem},

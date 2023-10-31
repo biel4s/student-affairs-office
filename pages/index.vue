@@ -21,6 +21,10 @@
 </style>
 
 <script>
+definePageMeta({
+  layout: 'main'
+})
+
 export default {
   data() {
     return {

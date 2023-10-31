@@ -1,5 +1,4 @@
 <template>
-  <AppHeader/>
   <h1 class="primary-heading">Student list</h1>
   <div class="content">
     <ul>
@@ -7,11 +6,14 @@
                    @remove-student="removeStudent"/>
     </ul>
   </div>
-  <BottomPanel/>
 </template>
 
 <script>
 import StudentItem from "~/components/StudentItem";
+
+definePageMeta({
+  layout: 'main'
+})
 
 export default {
   components: {StudentItem},

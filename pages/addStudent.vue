@@ -1,14 +1,16 @@
 <template>
-  <AppHeader/>
   <h1 class="primary-heading">Add student</h1>
   <div class="content">
     <StudentForm @add-student="addStudent"/>
   </div>
-  <BottomPanel/>
 </template>
 
 <script>
 import studentForm from "~/components/StudentForm";
+
+definePageMeta({
+  layout: 'main'
+})
 
 export default {
   components: {studentForm},
@@ -23,6 +25,5 @@ export default {
       sessionStorage.setItem('students', JSON.stringify(this.students));
     }
   }
-
 }
 </script>
