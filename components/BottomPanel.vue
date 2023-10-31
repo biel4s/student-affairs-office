@@ -1,11 +1,5 @@
 <template>
   <nav class="panel">
-    <div class="reports">
-      <NuxtLink to="/home">
-        <Icon name="ic:twotone-mail-outline"/>
-        <p>Reports</p>
-      </NuxtLink>
-    </div>
     <div class="add-student">
       <NuxtLink to="/addStudent">
         <Icon name="ic:baseline-add-circle-outline"/>
@@ -33,7 +27,7 @@
   display: flex;
   align-items: center;
   text-align: center;
-  justify-content: space-evenly;
+  justify-content: space-around;
   height: 60px;
   width: 100%;
   background-color: $primary-color;

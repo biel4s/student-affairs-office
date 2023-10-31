@@ -21,10 +21,6 @@
 </style>
 
 <script>
-definePageMeta({
-  layout: 'main'
-})
-
 export default {
   data() {
     return {
@@ -38,7 +34,7 @@ export default {
     },
     auth() {
       if (this.validate()) {
-        this.$router.push('/home');
+        this.$router.push('/addStudent');
       }
     }
   }

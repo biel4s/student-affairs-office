@@ -16,14 +16,17 @@ export default {
   components: {studentForm},
   data() {
     return {
-      students: JSON.parse(sessionStorage.getItem('students')) || []
+      students: JSON.parse(localStorage.getItem('students')) || []
     }
   },
   methods: {
     addStudent(student) {
-      this.students.push(student);
-      sessionStorage.setItem('students', JSON.stringify(this.students));
+      if (process.client) {
+        this.students.push(student);
+        localStorage.setItem('students', JSON.stringify(this.students));
+      }
     }
   }
+
 }
 </script>

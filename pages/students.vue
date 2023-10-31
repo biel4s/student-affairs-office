@@ -2,25 +2,49 @@
   <h1 class="primary-heading">Student list</h1>
   <div class="content">
     <ul>
-      <StudentItem v-for="student in students" :key="student.name" :student="student"
+      <StudentItem v-for="(student, index) in data" :key="index" :student="student" :studentIndex="index"
                    @remove-student="removeStudent"/>
     </ul>
   </div>
 </template>
 
-<script>
+<script setup>
 import StudentItem from "~/components/StudentItem";
 
+const data = ref("");
+//const emit = defineEmits(["remove-student"]);
+
 definePageMeta({
-  layout: 'main'
+  layout: 'main',
+  components: {StudentItem},
+  methods: {
+    removeStudent(student) {
+        const index = this.data.indexOf(student);
+        this.data.splice(index, 1);
+        // data.value = localStorage.setItem('students', JSON.stringify(this.data));
+        // emit("remove-student", studentIndex)
+        console.log(data);
+    }
+  }
 })
 
-export default {
-  components: {StudentItem},
-  data() {
-    return {
-      students: JSON.parse(sessionStorage.getItem('students')) || []
-      /*students: [
+onBeforeMount(()=> {
+  data.value = JSON.parse(localStorage.getItem("students"));
+})
+
+//onMounted
+
+//skeleton screen for ux
+
+</script>
+
+
+
+
+
+
+
+/*students: [
         {
           name: "Bartek Bartowicz",
           birth: "01.01.2000",
@@ -38,14 +62,3 @@ export default {
           speciality: "Front-end developer"
         }
       ]*/
-    }
-  },
-  methods: {
-    removeStudent(student) {
-      const index = this.students.indexOf(student);
-      this.students.splice(index, 1);
-      sessionStorage.setItem('students', JSON.stringify(this.students));
-    }
-  }
-}
-</script>
