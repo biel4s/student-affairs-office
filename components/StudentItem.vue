@@ -12,10 +12,10 @@
       </div>
     </div>
     <div class="student-right">
-      <NuxtLink :to="`/student/${studentIndex}`">
+      <NuxtLink :to="`/student/${student.album}`">
           <Icon name="ic:baseline-edit"/>
         </NuxtLink>
-      <Icon name="ic:baseline-delete" @click="$emit('remove-student', studentIndex)"/>
+      <Icon name="ic:baseline-delete" @click="$emit('remove-student', student)"/>
     </div>
   </li>
 </template>
@@ -26,8 +26,7 @@ export default {
     student: {
       type: Object,
       required: true
-    },
-    studentIndex: Number
+    }
   }
 }
 </script>
