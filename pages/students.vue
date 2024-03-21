@@ -18,24 +18,6 @@ export default {
   data() {
     return {
       students: JSON.parse(sessionStorage.getItem('students')) || []
-      /*students: [
-        {
-          name: "Bartek Bartowicz",
-          birth: "01.01.2000",
-          email: "bartekbartowicz@mail.com",
-          album: "123456",
-          field: "Computer Science",
-          speciality: "Front-end developer"
-        },
-        {
-          name: "Bartek Borowicz",
-          birth: "01.01.2000",
-          email: "bartekbartowicz@mail.com",
-          album: "123456",
-          field: "Computer Science",
-          speciality: "Front-end developer"
-        }
-      ]*/
     }
   },
   methods: {

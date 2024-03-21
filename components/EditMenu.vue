@@ -1,5 +1,5 @@
 <template>
-  <div class="container">
+  <div class="edit-buttons">
     <div class="buttons">
       <button class="btn" @click="isOpen = !isOpen">Status
         <Icon name="material-symbols:keyboard-arrow-down-rounded" :class="{ 'rotate': isOpen }"/>
@@ -40,17 +40,17 @@ export default {
 <style scoped lang="scss">
 @import "assets/scss/_variables.scss";
 
-.container {
+.edit-buttons {
   display: flex;
+  width: 100%;
   justify-content: center;
-  align-items: center;
 }
 
 .buttons {
   display: flex;
-  justify-content: center;
   flex-direction: column;
-  width: 600px;
+  width: 400px;
+  margin-bottom: 75px;
 }
 
 .rotate {
@@ -94,7 +94,6 @@ export default {
 
 .btn {
   color: black;
-  height: 60px;
   margin-top: 0;
   margin-bottom: 10px;
   position: relative;
@@ -121,24 +120,18 @@ export default {
 /* Medium devices (tablets, less than 992px) */
 @media only screen and (max-width: 991.98px) {
   .buttons {
-    width: 450px;
-  }
-
-  .btn {
-    height: 50px;
-    font-size: 20px;
+    width: 350px;
   }
 }
 
 /* X-Small devices (portrait phones, less than 576px) */
 @media only screen and (max-width: 575.98px) {
   .buttons {
-    max-width: 400px;
+    width: 100%;
   }
 
   .btn {
     height: 40px;
-    font-size: 16px;
   }
 }
 </style>

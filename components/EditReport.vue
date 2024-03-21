@@ -34,6 +34,9 @@ export default {
 .report-card {
   height: auto;
   display: flex;
+  background-color: #F1F1F1;
+  border-radius: 20px;
+  margin-bottom: 20px;
   flex-direction: column;
   padding: 15px 20px;
 }
@@ -43,7 +46,35 @@ export default {
   width: 100%;
 }
 
+.report-left {
+  display: flex;
+  align-items: center;
+  margin-right: 7vw;
+}
+
+.report-pfp {
+  width: 70px;
+  border-radius: 100%;
+}
+
+.report-info {
+  margin-left: 20px;
+  width: 250px;
+}
+
+.report-name {
+  font-weight: bold;
+  font-size: 24px;
+}
+
+.title {
+  font-size: 20px;
+}
+
 .report-right {
+  display: flex;
+  align-items: center;
+  width: 100%;
   justify-content: end;
   opacity: 0.7;
 }
@@ -52,6 +83,7 @@ export default {
   display: flex;
   font-size: 22px;
   text-align: center;
+  opacity: 0.7;
 }
 
 .description {
@@ -59,7 +91,7 @@ export default {
   margin-top: 30px;
   max-width: 100%;
   opacity: 1;
-  font-size: 24px;
+  font-size: 20px;
   overflow: auto;
   cursor: default;
 }
@@ -77,7 +109,7 @@ export default {
   }
 
   .report-name {
-    font-size: 24px;
+    font-size: 22px;
   }
 
   .title {

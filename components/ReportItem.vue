@@ -3,7 +3,7 @@
     <div class="report-left">
       <img class="report-pfp" src="~/assets/images/pfp.png" alt="Profile picture">
       <div class="report-info">
-        <p class="date">12:38 am - October 17</p>
+        <p class="date">Today - 12:38 am</p>
         <p class="report-name">{{ report.reportName }}</p>
         <p class="title">{{ report.title }}</p>
       </div>
@@ -31,32 +31,10 @@ export default {
     },
     reportIndex: Number
   }
-  /* name: "ReportItem",
-  props: {
-    reportName: {
-      type: String,
-      required: true,
-    },
-    title: {
-      type: String,
-      required: true,
-    },
-    description: {
-      type: String,
-      required: true,
-    },
-    status: {
-      type: String,
-      required: true,
-    },
-    time: {
-      type: String,
-      required: true,
-    },*/
 }
 </script>
 
-<style lang="scss">
+<style scoped lang="scss">
 .report-card {
   display: flex;
   align-items: center;
@@ -79,7 +57,7 @@ export default {
 }
 
 .report-info {
-  margin-left: 40px;
+  margin-left: 20px;
   width: 250px;
 }
 
@@ -166,7 +144,7 @@ export default {
   }
 
   .report-info {
-    margin-left: 20px;
+    margin-left: 15px;
     width: 200px;
   }
 
@@ -252,15 +230,20 @@ export default {
 
 /* Extra small devices (portrait phones, less than 380px) */
 @media only screen and (max-width: 379.98px) {
+  .report-card {
+    padding: 0 10px;
+  }
+
   .report-left {
     display: flex;
-    justify-content: space-between;
     width: 100%;
     margin: 0;
   }
 
-  .report-right {
-    display: none;
+  .icons {
+    svg {
+      transform: scale(0.8);
+    }
   }
 }
 
